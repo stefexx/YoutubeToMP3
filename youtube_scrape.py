@@ -59,7 +59,7 @@ try:
 except:
     print("Error when sending email!")
 
-#scipt to delete items from playlist
+#script to delete items from playlist
 import delete_playlist_item 
 delete_playlist_item.main()
 
