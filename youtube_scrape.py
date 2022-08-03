@@ -15,11 +15,18 @@ for url in p.video_urls:
     else:
         print(f"Downloading video: {yt.title}")
         stream = yt.streams.get_by_itag(140)
-        stream.download(SAVE_PATH, yt.title + ".mp3")
+        stream.download(SAVE_PATH)
 
         
-
-
+#i finally understand the problem with downlaoding podcats. They are too large and email only allows 25MB to be sent at once.
+#  Also there are no file extension for mp3?.
+# For example a 1.3 hr podcat is approx 75MB, so approx 25 min = 25MB, so somehow limit the file size to 25mb, and send seperate emails,
+# or figure out something completely different, probaly create a new function that detects if the filesize is >25MB then,
+#donwlaod the video in a spereated folder
+#options
+#1. split the videos into 25Mb bits (kinda lame)
+#2. downlaod the videos manually with usb cable (even more lame)
+#3. download video by compressing, or send a google drive link? (maybe, option 2 is not bad)
 
 
 #To send email with downloaded songs to you
